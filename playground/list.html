@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - List 列表</title>
+    <style>
+        body {
+            font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+        }
+
+        blockquote {
+            margin-left: 0;
+            padding-left: 10px;
+            border-left: 4px solid #ccc;
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+
+    <hr /> ul: 无序列表
+    <blockquote>ul，即unordered list（无序列表）。li，即list（列表项）。理解标签的语义更有利于你记忆。</blockquote>
+    <ul>
+        <li>li: Coffee</li>
+        <li>li: Tea</li>
+        <li>li: Milk</li>
+    </ul>
+
+    <hr /> ul: 无序列表 - 圆点列表
+    <ul style="list-style-type:disc">
+        <li>li: Coffee</li>
+        <li>li: Tea</li>
+        <li>li: Milk</li>
+    </ul>
+
+    <hr /> ul: 无序列表 - 圆圈列表
+    <ul style="list-style-type:circle">
+        <li>li: Coffee</li>
+        <li>li: Tea</li>
+        <li>li: Milk</li>
+    </ul>
+
+    <hr /> ul: 无序列表 - 正方形列表
+    <ul style="list-style-type:square">
+        <li>li: Coffee</li>
+        <li>li: Tea</li>
+        <li>li: Milk</li>
+    </ul>
+
+    <hr />
+    <hr /> ol: 有序列表
+    <blockquote>ol，即ordered list（有序列表）。li，即list（列表项）。理解标签的语义更有利于记忆。</blockquote>
+    <ol>
+        <li>li: Coffee</li>
+        <li>li: Milk</li>
+    </ol>
+
+    <hr /> ol: 有序列表 - 大写字母列表
+    <ol type="A">
+        <li>li: Coffee</li>
+        <li>li: Milk</li>
+    </ol>
+
+    <hr /> ol: 有序列表 - 小写字母列表
+    <ol type="a">
+        <li>li: Coffee</li>
+        <li>li: Milk</li>
+    </ol>
+
+    <hr /> ol: 有序列表 - 罗马数字列表
+    <ol type="I">
+        <li>li: Coffee</li>
+        <li>li: Milk</li>
+    </ol>
+
+    <hr /> ol: 有序列表 - 小写罗马数字列表
+    <ol type="i">
+        <li>li: Coffee</li>
+        <li>li: Milk</li>
+    </ol>
+
+    <hr />
+    <hr /> dl: 自定义列表
+    <blockquote>dl即definition list（定义列表），dt即definition term（定义名词），而dd即definition description（定义描述）。</blockquote>
+    <dl>
+        <dt>dt: Coffee</dt>
+        <dd>dd: - black hot drink</dd>
+        <dt>dt: Milk</dt>
+        <dd>dd: - white cold drink</dd>
+    </dl>
+
+    <hr />
+    <hr /> 嵌套列表：
+    <ul>
+        <li>Coffee</li>
+        <li>Tea
+            <ul>
+                <li>Black tea</li>
+                <li>Green tea
+                    <ul>
+                        <li>China</li>
+                        <li>Africa</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Milk</li>
+    </ul>
+</body>
+
+</html>
