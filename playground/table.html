@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+        }
+
+        blockquote {
+            margin-left: 0;
+            padding: 8px 0 8px 8px;
+            border-left: 4px solid #ccc;
+            font-size: small;
+        }
+
+        blockquote::before {
+            content: '说明：';
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <hr /> table: 表格
+        <table width="100%" border="1" cellspacing="0" cellpadding="5">
+
+            <!-- 定义表格标题 -->
+            <caption>caption: 表格标题</caption>
+
+            <!-- 定义表格列的组 -->
+            <colgroup>
+                <col span="1" style="background-color:red">
+                <col span="5" style="background-color:blue">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>thead>tr 行: 垂直/水平标题 =></th>
+                    <th>水平标题</th>
+                    <th>水平标题</th>
+                    <th>水平标题</th>
+                    <th>水平标题</th>
+                    <th>水平标题</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th>tbody>tr 行：垂直标题 =></th>
+                    <td>A1</td>
+                    <td>B1</td>
+                    <td>C1</td>
+                    <td>D1</td>
+                    <td rowspan="2">E1 + E2 跨2行</td>
+                </tr>
+                <tr>
+                    <th>tbody>tr 行：垂直标题 =></th>
+                    <td>A2</td>
+                    <td colspan="2">B2 + C2 跨2列</td>
+                    <td>D2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>tfoot>tr 行：垂直标题 =></th>
+                    <td>A3</td>
+                    <td>B3</td>
+                    <td>C3</td>
+                    <td>D3</td>
+                    <td>E3</td>
+                </tr>
+            </tfoot>
+        </table>
+        <blockquote>
+            <ul>
+                <li>tr，指的是table row（表格行）。td，指的是table data cell（表格单元格）</li>
+                <li>th，指的是table header cell（表头单元格）。td，指的是table datacell（表行单元格）。</li>
+                <li>thead, tbody, 和 tfoot 元素默认不会影响表格的布局。不过，您可以使用 CSS 来为这些元素定义样式，从而改变表格的外观。</li>
+            </ul>
+        </blockquote>
+        <hr />
+    </section>
+</body>
+
+</html>
