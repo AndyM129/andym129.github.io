@@ -1,0 +1,25 @@
+body {
+  font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+}
+
+blockquote {
+  margin-left: 0;
+  padding: 8px 0 8px 8px;
+  border-left: 4px solid #ccc;
+  font-size: small;
+}
+
+blockquote::before {
+  content: '说明：';
+  font-weight: bold;
+}
+
+blockquote>p::before {
+  content: '• ';
+}
+
+body>section {
+  padding: 10px 0 0 0;
+  margin-bottom: 100px;
+  border-top: 2px solid #ccc;
+}

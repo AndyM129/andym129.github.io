@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App版本头像</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script type="text/javascript" src="javascripts/save.js"></script>
 </head>
+
 <body>
-    <div id="avatar">
-        <div id="app-name-text">应用名称</div>
-        <div id="app-ver-text">v1.0.00</div>
-    </div>
-    <div id="form">
-        <form>
-            <label>App Name: <input type="text" name="app-name" placeholder="应用名称"></label>
-            <br/>
-            <label>App Version: <input type="text" name="app-ver" placeholder="版本号"></label>
-            <br />
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+    <main>
+        <div id="avatar">
+            <input type="text" name="app-name" id="app-name" value="应用名称">
+            <input type="text" name="app-ver" id="app-ver" value="版本号">
+        </div>
+        <button id="save" onclick="save_0()">保存</button>
+    </main>
 </body>
+
 </html>

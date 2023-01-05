@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - Form 表单</title>
+    <style>
+        body {
+            font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+        }
+
+        blockquote {
+            margin-left: 0;
+            padding: 8px 0 8px 8px;
+            border-left: 4px solid #ccc;
+            font-size: small;
+        }
+
+        blockquote::before {
+            content: '说明：';
+            font-weight: bold;
+        }
+
+        body>section {
+            padding: 10px 0 0 0;
+            margin-bottom: 100px;
+            border-top: 2px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>form: 表单</h1>
+        <form action="" method="get">
+
+            <!-- 绘制一个带标题的框 -->
+            <fieldset>
+
+                <legend>legend: 表单标题</legend>
+
+                <label>text 文本框: <input type="text" name="user" value="默认内容"></label>
+                <br />
+                <label>password 密码框: <input type="password" name="password" value="默认内容"></label>
+
+                <br />
+                <label>radio 单选框:
+                    <input type="radio" name="sex" value="male" checked>男
+                    <input type="radio" name="sex" value="female">女
+                </label>
+
+                <br />
+                <label>
+                    checkbox 复选框:
+                    <input type="checkbox" name="vehicle[]" value="Bike">我喜欢自行车
+                    <input type="checkbox" name="vehicle[]" value="Car" checked>我喜欢小汽车
+                </label>
+
+                <br />
+                <label>select 下拉列表框:
+                    <select name="cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="audi" selected>Audi</option>
+                    </select>
+                </label>
+
+                <br />
+                <label>select 下拉列表框（多选）:
+                    <select multiple size="5">
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>jQuery</option>
+                        <option>JavaScript</option>
+                        <option>Vue.js</option>
+                        <option>HTML5</option>
+                        <option>CSS3</option>
+                    </select>
+                    <blockquote>有些小伙伴将size取值设置为1、2或3时，会发现Chrome浏览器无效。这是因为Chrome浏览器要求最低是4个选项，因此我们只能设置4及以上的数字。</blockquote>
+                </label>
+
+                <br />
+                <label>textarea 文本域:
+                    <br /><textarea rows="10" cols="30">默认内容</textarea>
+                </label>
+
+                <br />
+                <button>button: 普通按钮（不常用到）</button>
+                <input type="button" value="button: 创建按钮" onclick="alert('hello~')">
+                <input type="submit" value="submit: 提交按钮">
+                <input type="reset" value="reset: 重置按钮">
+                <input type="hidden" value="hidden: 不可见">
+                <input type="file" value="file: 文件">
+            </fieldset>
+        </form>
+    </section>
+
+
+    <section>
+        <h1>form: 表单 - 发送邮件</h1>
+        <form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
+            <fieldset>
+                Name:<br>
+                <input type="text" name="name" value="your name"><br>
+                E-mail:<br>
+                <input type="text" name="mail" value="your email"><br>
+                Comment:<br>
+                <input type="text" name="comment" value="your comment" size="50"><br><br>
+                <input type="submit" value="发送">
+                <input type="reset" value="重置">
+            </fieldset>
+        </form>
+    </section>
+
+
+    <section>
+        <h1>form: 表单 - 相关属性</h1>
+        <form name="my-form" method="get" action="form.html" target="_blank" enctype="text/plain">
+            <fieldset>
+                Name:<input type="text" name="name" value="your name"><br>
+                E-mail:<input type="text" name="mail" value="your email"><br>
+                <br />
+                <input type="submit" value="发送">
+                <input type="reset" value="重置">
+            </fieldset>
+        </form>
+    </section>
+
+
+    <section>
+        练习：
+        <form name="test" action="">
+            <fieldset>
+                <label for="nickname">昵称：</label>
+                <input type="text" name="nickname">
+
+                <br>
+                <label for="password">密码：</label>
+                <input type="password" name="password">
+
+                <br>
+                <label for="email">邮箱：</label>
+                <input type="text" name="email">
+
+                <br>
+                <label for="sex">性别：</label>
+                <input type="radio" name="sex" value="男">男
+                <input type="radio" name="sex" value="女">女
+
+                <br>
+                <label for="hobby">爱好：</label>
+                <input type="checkbox" name="hobby" value="旅游">旅游
+                <input type="checkbox" name="hobby" value="摄影">摄影
+                <input type="checkbox" name="hobby" value="运动">运动
+
+                <br>
+                <label for="introduce">个人简介：</label>
+                <br>
+                <textarea name="introduce" id="" cols="30" rows="10"></textarea>
+
+                <br>
+                <label for="photo">上传个人照片：</label>
+                <br>
+                <input type="file" name="photo" id="">
+
+                <hr>
+                <center><input type="submit" value="立即注册"></center>
+            </fieldset>
+        </form>
+    </section>
+</body>
+
+</html>

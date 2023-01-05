@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - Image 图片</title>
+    <style>
+        body {
+            font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+        }
+
+        blockquote {
+            margin-left: 0;
+            padding: 8px 0 8px 8px;
+            border-left: 4px solid #ccc;
+            font-size: small;
+        }
+
+        blockquote::before {
+            content: '说明：';
+            font-weight: bold;
+        }
+
+        body>section {
+            padding: 10px 0 0 0;
+            margin-bottom: 100px;
+            border-top: 2px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img src="https://dummyimage.com/100x40/317AC6/fff&text=img" decoding="async" loading="lazy" border="2" alt="该属性用来为图像定义一串预备的可替换的文本" title="示例图片" />
+        <br />
+        <img src="" decoding="async" loading="lazy" border="2" alt="该属性用来为图像定义一串预备的可替换的文本" title="示例图片" />
+        <blockquote>
+            <lu>
+                <li>alt属性用于图片描述，这个描述文字是给搜索引擎看的。当图片无法显示时，页面会显示alt中的文字。</li>
+                <li>title属性也用于图片描述，不过这个描述文字是给用户看的。当鼠标指针移到图片上时，会显示title中的文字。</li>
+                <li>当我们把鼠标移到图片上时，就会显示title中的提示文字</li>
+            </lu>
+        </blockquote>
+    </section>
+
+
+    <section>
+        创建图像映射：
+        <br />
+        <img src="https://www.runoob.com/try/demo_source/planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+        <map name="planetmap">
+            <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+            <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+            <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+        </map>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1;url=https://www.toutiao.com/article/7140998333195256328" />
+    <title>CSS3</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/playground-styles.css">
+
+    <style>
+        body {
+            counter-reset: section;
+        }
+
+        body section h1::before {
+            counter-increment: section;
+            content: "" counter(section) "、";
+        }
+
+        #example-21 p {
+            color: red;
+        }
+
+        li {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            text-align: center;
+            line-height: 50px;
+            background-color: #ccc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="demo-0">
+        默认：
+        <ul class="demo">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </section>
+
+    <section id="demo-1">
+        <h1>通配符（*）</h1>
+        <ul class="demo">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <style>
+            #demo-1 .demo * {
+                border: 1px solid blue;
+            }
+        </style>
+    </section>
+
+
+    <section id="demo-2">
+        <h1>元素选择器（Element）</h1>
+        <ul class="demo">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <style>
+            #demo-2 li {
+                background-color: grey;
+                color: orange;
+            }
+        </style>
+    </section>
+
+
+    <section id="demo-3">
+        <h1>类选择器（.className）</h1>
+        <ul class="demo">
+            <li>1</li>
+            <li class="li-2">2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <style>
+            #demo-3 .li-2 {
+                font-weight: bold;
+                color: yellow;
+            }
+        </style>
+    </section>
+
+
+    <section id="demo-4">
+        <h1>id选择器（#ID）</h1>
+        <ul class="demo">
+            <li id="first">1</li>
+            <li class="li-2">2</li>
+            <li>3</li>
+            <li>4</li>
+            <li id="last">5</li>
+        </ul>
+        <style>
+            #demo-4 #first {
+                background: lime;
+                color: #000;
+            }
+
+            #demo-4 #last {
+                background: #000;
+                color: lime;
+            }
+        </style>
+    </section>
+
+
+    <section id="demo-5">
+        <h1>后代选择器（E F）</h1>
+        <ul class="demo">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <style>
+            #demo-5 ul li {
+                background-color: red;
+                color: #fff;
+            }
+        </style>
+    </section>
+
+
+    <section id="demo-6">
+        <h1>子元素选择器(E>F)</h1>
+        <ul class="demo">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <style>
+            #demo-6 ul>li {
+                background: green;
+                color: yellow;
+            }
+        </style>
+    </section>
+
+
+    <section id="demo-7">
+        <h1>相邻兄弟元素选择器(E + F)</h1>
+        <ul class="demo">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <style>
+            #demo-7 li+li {
+                background: green;
+                color: yellow;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </section>
+
+
+    <section id="demo-8">
+        <h1>通用兄弟选择器（E 〜 F）</h1>
+        <ul class="demo">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+        <style>
+            #demo-8 .active~li {
+                background: green;
+                color: yellow;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </section>
+
+
+    <section id="demo-9">
+        <h1></h1>
+        <ul class="demo">
+            <li class="first">1</li>
+            <li>2</li>
+            <li class="li-3">3</li>
+            <li>4</li>
+            <li class="last">5</li>
+        </ul>
+        <style>
+            #demo-9 .first,
+            #demo-9 .last,
+            #demo-9 .li-3 {
+                background: green;
+                color: yellow;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </section>
+
+</body>
+
+</html>

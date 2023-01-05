@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 初识</title>
+
+    <!-- 外部样式表 -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/playground-styles.css">
+
+    <!-- 内部样式表 -->
+    <style>
+        body {
+            padding-bottom: 500px;
+        }
+
+        body section {
+            padding-bottom: 100px;
+            border-bottom: 5px solid #ccc;
+            padding: 0px 0 0 0;
+            margin-bottom: 100px;
+            border-top: 0;
+        }
+
+        body section h2 {
+            border-bottom: 1px dotted #ccc;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+        }
+
+        /* 页面背景图 */
+        /* body {background-image:url("/images/back40.gif");} */
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS3 使用一览</h1>
+
+    <section id="example-23">
+        <h2>CSS3 字体</h2>
+        <p style="font-weight: normal;">hello world! 苹方黑体-准-简</p>
+        <p style="font-weight: bold;">hello world! 苹方黑体-中粗-简</p>
+        <style>
+            @font-face {
+                font-family: my-custom-font;
+                src: url(/src/font/苹方黑体-准-简.ttf);
+            }
+
+            @font-face {
+                font-family: my-custom-font;
+                src: url(/src/font/苹方黑体-中粗-简.ttf);
+                font-weight: bold;
+            }
+
+            #example-23 p {
+                color: red;
+                font-family: my-custom-font;
+            }
+        </style>
+    </section>
+
+    <section id="example-24">
+        <h2>CSS3 过渡</h2>
+        <p>鼠标移上来~</p>
+        <p>鼠标移上来~ —— 多项改变</p>
+        <p>鼠标移上来~ —— 多项改变 2</p>
+        <p>这是测试<span class="mask">并且被掩盖的</span>文字！</p>
+        <style>
+            #example-24 p:nth-of-type(1) {
+                color: red;
+                width: 50%;
+                /* transition: property duration timing-function delay; */
+                transition: width 1s ease-in-out 0.5s;
+                border: 1px solid black;
+            }
+
+            #example-24 p:nth-of-type(1):hover {
+                width: 100%;
+            }
+
+            #example-24 p:nth-of-type(2) {
+                color: red;
+                width: 50%;
+                /* transition: all 2s; */
+                transition: width 1s, background-color 1s;
+                border: 1px solid black;
+            }
+
+            #example-24 p:nth-of-type(2):hover {
+                width: 100%;
+                background-color: yellowgreen;
+            }
+
+            #example-24 p:nth-of-type(3) {
+                width: 200px;
+                height: 200px;
+                background-color: #f00;
+                transition: all 2s;
+            }
+
+            #example-24 p:nth-of-type(3):hover {
+                background-color: #00f;
+                transform: translateX(300px) translateY(300px) scale(0.8) rotate(360deg);
+            }
+
+            #example-24 p:nth-of-type(4) .mask {
+                background-color: #252525;
+                color: #252525;
+                transition: color 0.5s;
+                padding: 0 3px;
+            }
+
+            #example-24 p:nth-of-type(4) .mask:hover {
+                color: #ffffff;
+            }
+        </style>
+    </section>
+
+    <section id="example-25">
+        <h2>CSS3 动画</h2>
+        <pre>
+    要创建 CSS3 动画，你需要了解 @keyframes 规则。
+    @keyframes 规则是创建动画。
+    @keyframes 规则内指定一个 CSS 样式和动画将逐步从目前的样式更改为新的样式。
+    		</pre>
+
+        <h3>简单示例</h3>
+        <p>please hover ~</p>
+        <style>
+            #example-25 p {
+                width: 100px;
+                height: 100px;
+                background: red;
+            }
+
+            #example-25 p:hover {
+                animation: example-25-1 5s;
+            }
+
+            @keyframes example-25-1 {
+                0% {
+                    background: red;
+                }
+
+                25% {
+                    background: yellow;
+                }
+
+                50% {
+                    background: blue;
+                }
+
+                100% {
+                    background: green;
+                }
+            }
+        </style>
+
+        <h3>绘制太阳系各大行星运行轨迹</h2>
+            <div class="solarsys">
+                <!--太阳-->
+                <div class='sun'></div>
+
+                <!--水星轨道-->
+                <div class='mercuryOrbit'></div>
+
+                <!--水星-->
+                <div class='mercury'></div>
+
+                <!--金星轨道-->
+                <div class='venusOrbit'></div>
+
+                <!--金星-->
+                <div class='venus'></div>
+
+                <!--地球轨道-->
+                <div class='earthOrbit'></div>
+
+                <!--地球-->
+                <div class='earth'></div>
+
+                <!--火星轨道-->
+                <div class='marsOrbit'></div>
+
+                <!--火星-->
+                <div class='mars'></div>
+
+                <!--木星轨道-->
+                <div class='jupiterOrbit'></div>
+
+                <!--木星-->
+                <div class='jupiter'></div>
+
+                <!--土星轨道-->
+                <div class='saturnOrbit'></div>
+
+                <!--土星-->
+                <div class='saturn'></div>
+
+                <!--天王星轨道-->
+                <div class='uranusOrbit'></div>
+
+                <!--天王星-->
+                <div class='uranus'></div>
+
+                <!--海王星轨道-->
+                <div class='neptuneOrbit'></div>
+
+                <!--海王星-->
+                <div class='neptune'></div>
+            </div>
+
+            <style>
+                .solarsys {
+                    width: 800px;
+                    height: 800px;
+                    position: relative;
+                    margin: 0 auto;
+                    background-color: #000000;
+                    padding: 0;
+                    transform: scale(1);
+                }
+
+                /*太阳*/
+                .sun {
+                    left: 357px;
+                    top: 357px;
+                    height: 90px;
+                    width: 90px;
+                    background-color: rgb(248, 107, 35);
+                    border-radius: 50%;
+                    box-shadow: 5px 5px 10px rgb(248, 107, 35), -5px -5px 10px rgb(248, 107, 35), 5px -5px 10px rgb(248, 107, 35), -5px 5px 10px rgb(248, 107, 35);
+                    position: absolute;
+                    margin: 0;
+                }
+
+                /*水星*/
+                .mercury {
+                    left: 337.5px;
+                    top: 395px;
+                    height: 10px;
+                    width: 10px;
+                    background-color: rgb(166, 138, 56);
+                    border-radius: 50%;
+                    position: absolute;
+                    transform-origin: 62.5px 5px;
+                    animation: rotate 1.5s infinite linear;
+                }
+
+                /*水星轨道*/
+                .mercuryOrbit {
+                    left: 342.5px;
+                    top: 342.5px;
+                    height: 115px;
+                    width: 115px;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    border-style: dashed;
+                    border-color: gray;
+                    position: absolute;
+                    border-width: 1px;
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                /*金星*/
+                .venus {
+                    left: 309px;
+                    top: 389px;
+                    height: 22px;
+                    width: 22px;
+                    background-color: rgb(246, 157, 97);
+                    border-radius: 50%;
+                    position: absolute;
+                    transform-origin: 91px 11px;
+                    animation: rotate 3.84s infinite linear;
+                }
+
+                /*金星轨道*/
+                .venusOrbit {
+                    left: 320px;
+                    top: 320px;
+                    height: 160px;
+                    width: 160px;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    border-style: dashed;
+                    border-color: gray;
+                    position: absolute;
+                    border-width: 1px;
+                    /*margin: 100px;*/
+                    /*transform-origin: -75px -75px;*/
+                    /*animation: rotate 4s infinite linear;*/
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                /*地球*/
+                .earth {
+                    left: 266.5px;
+                    top: 391px;
+                    height: 18px;
+                    width: 18px;
+                    background-color: rgb(115, 114, 174);
+                    border-radius: 50%;
+                    position: absolute;
+                    transform-origin: 134px 9px;
+                    animation: rotate 6.25s infinite linear;
+                }
+
+                /*地球轨道*/
+                .earthOrbit {
+                    left: 275px;
+                    top: 275px;
+                    height: 250px;
+                    width: 250px;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    border-style: dashed;
+                    border-color: gray;
+                    position: absolute;
+                    border-width: 1px;
+                    /*margin: 100px;*/
+                    /*transform-origin: -75px -75px;*/
+                    /*animation: rotate 4s infinite linear;*/
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                /*火星*/
+                .mars {
+                    left: 222.5px;
+                    top: 392.5px;
+                    height: 15px;
+                    width: 15px;
+                    background-color: rgb(140, 119, 63);
+                    border-radius: 50%;
+                    position: absolute;
+                    transform-origin: 177.5px 7.5px;
+                    animation: rotate 11.75s infinite linear;
+                }
+
+                /*火星轨道*/
+                .marsOrbit {
+                    left: 230px;
+                    top: 230px;
+                    height: 340px;
+                    width: 340px;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    border-style: dashed;
+                    border-color: gray;
+                    position: absolute;
+                    border-width: 1px;
+                    /*margin: 100px;*/
+                    /*transform-origin: -75px -75px;*/
+                    /*animation: rotate 4s infinite linear;*/
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                /*木星*/
+                .jupiter {
+                    left: 134px;
+                    top: 379px;
+                    height: 42px;
+                    width: 42px;
+                    background-color: rgb(156, 164, 143);
+                    border-radius: 50%;
+                    position: absolute;
+                    transform-origin: 266px 21px;
+                    animation: rotate 74.04s infinite linear;
+                }
+
+                /*木星轨道*/
+                .jupiterOrbit {
+                    left: 155px;
+                    top: 155px;
+                    height: 490px;
+                    width: 490px;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    border-style: dashed;
+                    border-color: gray;
+                    position: absolute;
+                    border-width: 1px;
+                    /*margin: 100px;*/
+                    /*transform-origin: -75px -75px;*/
+                    /*animation: rotate 4s infinite linear;*/
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                /*土星*/
+                .saturn {
+                    left: 92px;
+                    top: 387px;
+                    height: 26px;
+                    width: 26px;
+                    background-color: rgb(215, 171, 68);
+                    border-radius: 50%;
+                    position: absolute;
+                    transform-origin: 308px 13px;
+                    animation: rotate 183.92s infinite linear;
+                }
+
+                /*土星轨道*/
+                .saturnOrbit {
+                    left: 105px;
+                    top: 105px;
+                    height: 590px;
+                    width: 590px;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    border-style: dashed;
+                    border-color: gray;
+                    position: absolute;
+                    border-width: 1px;
+                    /*margin: 100px;*/
+                    /*transform-origin: -75px -75px;*/
+                    /*animation: rotate 4s infinite linear;*/
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                /*天王星*/
+                .uranus {
+                    left: 41.5px;
+                    top: 386.5px;
+                    height: 27px;
+                    width: 27px;
+                    background-color: rgb(164, 192, 206);
+                    border-radius: 50%;
+                    position: absolute;
+                    transform-origin: 358.5px 13.5px;
+                    animation: rotate 524.46s infinite linear;
+                }
+
+                /*天王星轨道*/
+                .uranusOrbit {
+                    left: 55px;
+                    top: 55px;
+                    height: 690px;
+                    width: 690px;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    border-style: dashed;
+                    border-color: gray;
+                    position: absolute;
+                    border-width: 1px;
+                    /*margin: 100px;*/
+                    /*transform-origin: -75px -75px;*/
+                    /*animation: rotate 4s infinite linear;*/
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                /*海王星*/
+                .neptune {
+                    left: 10px;
+                    top: 390px;
+                    height: 20px;
+                    width: 20px;
+                    background-color: rgb(133, 136, 180);
+                    border-radius: 50%;
+                    position: absolute;
+                    transform-origin: 390px 10px;
+                    animation: rotate 1028.76s infinite linear;
+                }
+
+                /*海王星轨道*/
+                .neptuneOrbit {
+                    left: 20px;
+                    top: 20px;
+                    height: 760px;
+                    width: 760px;
+                    background-color: transparent;
+                    border-radius: 50%;
+                    border-style: dashed;
+                    border-color: gray;
+                    position: absolute;
+                    border-width: 1px;
+                    /*margin: 100px;*/
+                    /*transform-origin: -75px -75px;*/
+                    /*animation: rotate 4s infinite linear;*/
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                @keyframes rotate {
+                    100% {
+                        transform: rotate(-360deg);
+                    }
+                }
+            </style>
+
+            <h3>太极图旋转</h3>
+            <div style="background-color:#ccc; padding: 10px;">
+                <div class="taiji"></div>
+            </div>
+
+            <style>
+                .taiji * {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .taiji {
+                    width: 150px;
+                    height: 300px;
+                    margin: 100px auto;
+                    border-right: 150px solid #000;
+                    background-color: #fff;
+                    border-radius: 150px;
+                    animation: rotate 2s infinite linear;
+                }
+
+                .taiji::before,
+                .taiji::after {
+                    content: '';
+                    margin-left: 50%;
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    background-color: #fff;
+                    border: 50px solid #000;
+                    border-radius: 75px;
+                }
+
+                .taiji::after {
+                    background-color: #000;
+                    border: 50px solid #fff;
+                }
+
+                @keyframes rotate {
+                    from {}
+
+                    to {
+                        transform: rotate(-360deg);
+                    }
+                }
+            </style>
+    </section>
+
+    <section id="example-app">
+        <h2>APP框架</h2>
+        <p>详见：https://www.runoob.com/css3/css3-flexbox.html</p>
+        <div class="app">
+            <nav>
+                <header>
+                    <i class='time'>9:41</i>
+                    <i class="island"></i>
+                    <i class='battery bx bx-battery'></i>
+                    <i class='wifi bx bx-wifi'></i>
+                    <i class='signal bx bx-signal-4'></i>
+                </header>
+                <content>
+                    <div class="button"><i class='bx bx-chevron-left'></i></div>
+                    <div class="title">标题</div>
+                    <div class="button"><i class='bx bx-dots-horizontal-rounded'></i></div>
+                </content>
+            </nav>
+            <main>content</main>
+            <tabbar>
+                <content>
+                    <div class="button selected">
+                        <icon></icon>
+                        <title>微信</title>
+                    </div>
+                    <div class="button">
+                        <icon></icon>
+                        <title>通讯录</title>
+                    </div>
+                    <div class="button">
+                        <icon></icon>
+                        <title>发现</title>
+                    </div>
+                    <div class="button">
+                        <icon></icon>
+                        <title>我</title>
+                    </div>
+                </content>
+                <footer></footer>
+            </tabbar>
+        </div>
+        <style>
+            /* APP */
+            #example-app .app {
+                border: 1px solid gray;
+                width: 414px;
+                height: 896px;
+                scale: 0.9;
+                display: flex;
+                flex-direction: column;
+            }
+
+            #example-app .app * {
+                box-sizing: border-box;
+            }
+
+            #example-app .app *:hover {
+                border: 1px solid red;
+            }
+
+            /* 所有按钮 的样式 */
+            #example-app .app .button {
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+
+            #example-app .app .button:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+
+            #example-app .app .button:active {
+                opacity: 60%;
+            }
+
+            /* APP - 导航栏 */
+            #example-app .app>nav {
+                background-color: #ECECED;
+            }
+
+            #example-app .app>nav .button .bx {
+                font-size: 30px;
+            }
+
+            /* APP - 导航栏 - 状态栏 */
+            #example-app .app>nav>header {
+                border-bottom: 1px dashed #ccc;
+                height: 44px;
+                position: relative;
+            }
+
+            #example-app .app>nav>header>i {
+                display: block;
+                font-style: normal;
+            }
+
+            /* APP - 导航栏 - 状态栏 */
+            #example-app .app>nav>header>i.island {
+                display: inline-block;
+                width: 144px;
+                height: 34px;
+                background-color: black;
+                margin-top: 10px;
+                margin-left: 82px;
+                border-radius: 17px;
+            }
+
+            /* APP - 导航栏 - 状态栏 - 时间 */
+            #example-app .app>nav>header>i.time {
+                font-size: 15px;
+                float: left;
+                left: 25px;
+                top: 15px;
+                margin: 15px 0 0 25px;
+            }
+
+            /* APP - 导航栏 - 状态栏 - 电量 */
+            #example-app .app>nav>header>i.battery {
+                display: block;
+                font-size: 25px;
+                float: right;
+                margin: 15px 17px 0 0;
+            }
+
+            /* APP - 导航栏 - 状态栏 - wifi */
+            #example-app .app>nav>header>i.wifi {
+                display: block;
+                font-size: 18px;
+                float: right;
+                margin: 19px 2px 0 0;
+            }
+
+            /* APP - 导航栏 - 状态栏 - 信号 */
+            #example-app .app>nav>header>i.signal {
+                display: block;
+                font-size: 20px;
+                float: right;
+                margin: 17px 2px 0 0;
+            }
+
+            /* APP - 导航栏 - 主体 */
+            #example-app .app>nav>content {
+                height: 44px;
+                width: 100%;
+                padding: 0 10px;
+                /* 弹性盒子 */
+                display: flex;
+                /* 弹性盒子元素在主轴（横轴）方向上的对齐方式 */
+                justify-content: space-between;
+                /* 弹性盒子元素在侧轴（纵轴）方向上的对齐方式 */
+                align-items: center;
+                /* 设置弹性盒子的子元素超出父容器时是否换行 */
+                flex-wrap: wrap;
+                /* 修改 flex-wrap 属性的行为，类似 align-items, 但不是设置子元素对齐，而是设置行对齐 */
+                align-content: center;
+            }
+
+            /* APP - 导航栏 - 主体 - 标题 */
+            #example-app .app>nav>content>.title {
+                font-size: 17px;
+            }
+
+            /* APP - 导航栏 - 主体 - 按钮 */
+            #example-app .app>nav>content>.button {
+                font-size: 17px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* APP - 主体页面 */
+            #example-app .app>main {
+                background-color: white;
+                flex: 1;
+            }
+
+            /* APP - TabBar */
+            #example-app .app>tabbar {
+                background-color: #ECECED;
+                display: block;
+            }
+
+            /* APP - TabBar - 主体 */
+            #example-app .app>tabbar>content {
+                width: 100%;
+                height: 49px;
+                display: flex;
+            }
+
+            /* APP - TabBar - 主体 - 按钮 */
+            #example-app .app>tabbar>content>.button {
+                flex: 1;
+                flex-direction: column;
+                color: black;
+                border-color: black;
+                transition: background-color 0.3s;
+            }
+
+            #example-app .app>tabbar>content>.button:hover {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+            /* APP - TabBar - 主体 - 按钮 */
+            #example-app .app>tabbar>content>.button.selected {
+                color: #56BD69;
+                border-color: #56BD69;
+            }
+
+            /* APP - TabBar - 主体 - 按钮 - 图标 */
+            #example-app .app>tabbar>content>.button>icon {
+                width: 23px;
+                height: 23px;
+                border: 2px solid;
+                border-color: inherit;
+                border-radius: 5px;
+                margin-bottom: 2px;
+            }
+
+            /* APP - TabBar - 主体 - 按钮 - 标题 */
+            #example-app .app>tabbar>content>.button>title {
+                display: block;
+                border-color: inherit;
+                font-size: 12px;
+            }
+
+            /* APP - TabBar - 底部安全区 */
+            #example-app .app>tabbar>footer {
+                border-top: 1px dashed #ccc;
+                height: 34px;
+                text-align: center;
+            }
+
+            #example-app .app>tabbar>footer::after {
+                content: "";
+                height: 5px;
+                width: 134px;
+                background-color: black;
+                position: absolute;
+                bottom: 5px;
+                border-radius: 2.5px;
+                /* 水平居中 */
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        </style>
+    </section>
+
+    <section id="example-27">
+        <h2>CSS 网格布局</h2>
+        <h3>网页模版</h3>
+        <div class="grid-container-1">
+            <div class="item1">头部</div>
+            <div class="item2">菜单</div>
+            <div class="item3">主要内容区域</div>
+            <div class="item4">右侧</div>
+            <div class="item5">底部</div>
+        </div>
+        <style>
+            #example-27 .grid-container-1 {
+                display: grid;
+                grid:
+                    'header header header header header header'
+                    'menu main main main right right'
+                    'menu footer footer footer footer footer';
+                grid-gap: 10px;
+                background-color: #2196F3;
+                padding: 10px;
+            }
+
+            #example-27 .grid-container-1>div {
+                background-color: rgba(255, 255, 255, 0.8);
+                text-align: center;
+                padding: 20px 0;
+                font-size: 30px;
+            }
+
+            #example-27 .grid-container-1 .item1 {
+                grid-area: header;
+            }
+
+            #example-27 .grid-container-1 .item2 {
+                grid-area: menu;
+            }
+
+            #example-27 .grid-container-1 .item3 {
+                grid-area: main;
+            }
+
+            #example-27 .grid-container-1 .item4 {
+                grid-area: right;
+            }
+
+            #example-27 .grid-container-1 .item5 {
+                grid-area: footer;
+            }
+        </style>
+
+        <h3>网格元素</h3>
+        <div class="grid-container-2">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+        <style>
+            #example-27 .grid-container-2 {
+                display: grid;
+                background-color: #2196F3;
+                padding: 10px;
+
+                /* 网格布局中有「等宽的」3列: */
+                /* grid-template-columns: auto auto auto; */
+
+                /* 网格布局中有「指定各列占比份数的」3列: */
+                grid-template-columns: 1fr 2fr 1fr;
+
+                /* 使用grid-template-rows 属性定义第一行高度为 100px，第二行高度为 300px。 */
+                grid-template-rows: 100px 300px;
+
+                /* 间距 */
+                /* grid-column-gap: 10px; */
+                /* grid-row-gap: 20px; */
+                grid-gap: 20px 10px;
+            }
+
+            #example-27 .grid-container-2 .grid-item {
+                background-color: rgba(255, 255, 255, 0.8);
+                border: 1px solid rgba(0, 0, 0, 0.8);
+                padding: 20px;
+                font-size: 30px;
+                text-align: center;
+
+            }
+        </style>
+
+        <h3>网格线</h3>
+        <div class="grid-container-3">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+            <div class="item7">7</div>
+            <div class="item8">8</div>
+        </div>
+        <style>
+            #example-27 .grid-container-3 {
+                display: grid;
+                grid-template-columns: 80px auto auto;
+                grid-gap: 10px;
+                background-color: #2196F3;
+                padding: 10px;
+            }
+
+            #example-27 .grid-container-3>div {
+                background-color: rgba(255, 255, 255, 0.8);
+                text-align: center;
+                padding: 20px 0;
+                font-size: 30px;
+            }
+
+            #example-27 .grid-container-3 .item1 {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        </style>
+    </section>
+
+</body>
+
+</html>

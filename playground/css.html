@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 初识</title>
+
+    <!-- 外部样式表 -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/playground-styles.css">
+
+    <!-- 内部样式表 -->
+    <style>
+        body {
+            padding-bottom: 500px;
+        }
+
+        body section {
+            padding-bottom: 100px;
+            border-bottom: 5px solid #ccc;
+            padding: 0px 0 0 0;
+            margin-bottom: 100px;
+            border-top: 0;
+        }
+
+        body section h2 {
+            border-bottom: 1px dotted #ccc;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+        }
+
+        /* 页面背景图 */
+        /* body {background-image:url("/images/back40.gif");} */
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <blockquote>@import方式是先加载HTML后加载CSS，而link是先加载CSS后加载HTML。</blockquote>
+    </section>
+
+
+    <h1>CSS 使用一览</h1>
+
+    <section id="example-1">
+        <h2>选择器</h2>
+        <p>hello world!</p>
+        <p class="custom-color">hello world 2!</p>
+        <style>
+            #example-1>p {
+                background-color: orange;
+                color: red;
+                text-align: center;
+                font-size: 20px;
+                font-family: arial;
+            }
+
+            #example-1>p.custom-color {
+                color: blue;
+            }
+        </style>
+        <blockquote>
+            <p>常用的有「元素选择器、id选择器、class选择器、后代选择器、群组选择器」</p>
+            <p>详见 <a href="https://www.toutiao.com/article/7140998333195256328">https://www.toutiao.com/article/7140998333195256328</a></p>
+        </blockquote>
+    </section>
+
+    <section id="example-2">
+        <h2>CSS 背景</h2>
+        <p class="p1" style="width: 300px; height: 100px;">背景颜色&图像</p>
+        <p class="p2" style="width: 300px; height: 100px;">水平平铺</p>
+        <p class="p3" style="width: 300px; height: 100px;">垂直平铺</p>
+        <p class="p4" style="width: 300px; height: 100px;">设置定位与不平铺</p>
+        <p class="p5" style="width: 300px; height: 100px;">简写属性</p>
+        <style>
+            #example-2 p.p1 {
+                background-color: #b0c4de;
+                background-image: url('https://via.placeholder.com/100x80/449FE3/FFFFFF?text=andym129');
+            }
+
+            #example-2 p.p2 {
+                background-color: #b0c4de;
+                background-image: url('https://via.placeholder.com/100x80/449FE3/FFFFFF?text=andym129');
+                background-repeat: repeat-x;
+            }
+
+            #example-2 p.p3 {
+                background-color: #b0c4de;
+                background-image: url('https://via.placeholder.com/100x80/449FE3/FFFFFF?text=andym129');
+                background-repeat: repeat-y;
+            }
+
+            #example-2 p.p4 {
+                background-color: #b0c4de;
+                background-image: url('https://via.placeholder.com/100x80/449FE3/FFFFFF?text=andym129');
+                background-repeat: no-repeat;
+                background-position: right bottom;
+                /* background-attachment: fixed;  固定位置 */
+            }
+
+            #example-2 p.p5 {
+                background: #b0c4de url('https://via.placeholder.com/100x80/449FE3/FFFFFF?text=andym129') no-repeat right bottom;
+            }
+        </style>
+    </section>
+
+    <section id="example-3">
+        <h2>CSS 文本格式</h2>
+        <p class="p1">
+            hello world! hello world! hello world! hello world! hello world! hello world!<br />
+            hello world! hello world! hello world! hello world! hello world! hello world!
+        </p>
+        <p class="p2">
+            hello world! hello world! hello world! hello world! hello world! hello world!<br />
+            hello world! hello world! hello world! hello world! hello world! hello world!
+        </p>
+        <p class="p3">hello world! hello world!</p>
+        <style>
+            #example-3 p.p1 {
+                color: red;
+                text-align: center;
+                text-decoration: underline;
+                text-transform: capitalize;
+            }
+
+            #example-3 p.p2 {
+                text-indent: 50px;
+                font-family: "Times New Roman", Times, serif;
+                font-style: oblique;
+                font-size: 14px;
+            }
+
+            #example-3 p.p3 {
+                font-size: 1.875em;
+            }
+        </style>
+    </section>
+
+    <section id="example-4">
+        <h2>CSS 链接</h2>
+        <a class="a1" href="#xxx">一个链接</a><br />
+        <a class="a2" href="#xxx">一个链接</a><br />
+        <style>
+            /* 未访问链接*/
+            #example-4 a:link {
+                color: red;
+            }
+
+            /* 已访问链接 */
+            #example-4 a:visited {
+                color: orange;
+            }
+
+            /* 鼠标移动到链接上 */
+            /* a:hover 必须跟在 a:link 和 a:visited后面 */
+            #example-4 a:hover {
+                color: green;
+            }
+
+            /* 鼠标点击时 */
+            /* a:active 必须跟在 a:hover后面 */
+            #example-4 a:active {
+                color: peru;
+            }
+
+            #example-4 a.a2 {
+                font-weight: bold;
+                color: #FFFFFF;
+                background-color: #98bf21;
+                width: 120px;
+                text-align: center;
+                padding: 0 4px;
+                text-decoration: none;
+            }
+        </style>
+    </section>
+
+    <section id="example-5">
+        <h2>CSS 列表</h2>
+
+        指定列表样式，详见 https://www.runoob.com/cssref/pr-list-style-type.html
+        <ul class="style-1">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Coca Cola</li>
+        </ul>
+
+        自定义列表项标记的图像:
+        <ul class="style-2">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Coca Cola</li>
+        </ul>
+
+        浏览器兼容性解决方案 —— 用背景图:
+        <ul class="style-3">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Coca Cola</li>
+        </ul>
+
+        移除默认设置:
+        <ul class="style-4">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Coca Cola</li>
+        </ul>
+        <style>
+            #example-5 ul.style-1 li {
+                color: red;
+                list-style-type: square;
+            }
+
+            #example-5 ul.style-2 li {
+                color: orange;
+                list-style-image: url('https://tuchuangs.com/imgs/2022/11/12/603e2db415ce97b5.png');
+                font-size: 20px;
+            }
+
+            #example-5 ul.style-3 {
+                list-style-type: none;
+            }
+
+            #example-5 ul.style-3 li {
+                color: blue;
+                background-repeat: no-repeat;
+                background-position: 0px 5px;
+                list-style-image: url('https://tuchuangs.com/imgs/2022/11/12/603e2db415ce97b5.png');
+                font-size: 20px;
+            }
+
+            #example-5 ul.style-4 {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </section>
+
+    <section id="example-6">
+        <h2>CSS 表格</h2>
+        <table class="style-1">
+            <caption>指定了标题的位置</caption>
+
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+            </tr>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+            </tr>
+        </table>
+
+        <style>
+            #example-6 table.style-1 {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            #example-6 table.style-1 caption {
+                caption-side: bottom;
+            }
+
+            #example-6 table.style-1,
+            #example-6 table.style-1 th,
+            #example-6 table.style-1 td {
+                border: 1px solid gray;
+            }
+
+            #example-6 table.style-1 th {
+                background-color: gainsboro;
+            }
+
+            #example-6 table.style-1 td {
+                text-align: right;
+                height: 50px;
+                vertical-align: bottom;
+                padding: 15px;
+            }
+        </style>
+    </section>
+
+    <section id="example-7">
+        <h2>CSS 盒子模型</h2>
+        <div class="style-1">边框宽度</div>
+        <div class="style-2">边框颜色</div>
+        <div class="style-3">边框 - 单独设置各边</div>
+        <div class="style-4">边框 - 自定义</div>
+        <style>
+            #example-7 .style-1 {
+                color: red;
+                width: 300px;
+                border: 25px solid gray;
+                padding: 25px;
+                margin: 25px;
+            }
+
+            #example-7 .style-2 {
+                color: #1E1E1E;
+                border-style: solid;
+                border-width: medium;
+                border-color: #317AC6;
+            }
+
+            #example-7 .style-3 {
+                margin-top: 10px;
+                padding: 10px;
+                border-top-style: dashed;
+                border-right-style: solid;
+                border-bottom-style: dotted;
+                border-left-style: double;
+                border-radius: 10px;
+            }
+
+            #example-7 .style-4 {
+                margin-top: 10px;
+                padding: 10px;
+                color: gray;
+                background-color: #E4FEFE;
+                border-left: solid 5px #3C80C9;
+            }
+        </style>
+    </section>
+
+    <section id="example-8">
+        <h2>CSS 轮廓（outline）</h2>
+        <p>在元素周围画线（不占空间）</p>
+        <style>
+            #example-8 p {
+                color: red;
+                border: 1px solid red;
+                outline: orange dotted thick;
+                outline-width: 10px;
+            }
+        </style>
+    </section>
+
+    <section id="example-9">
+        <h2>CSS margin (外边距)</h2>
+        <div>
+            <p>设置一个使用厘米值的文本的顶部 margin。</p>
+        </div>
+
+        <style>
+            #example-9 div {
+                border: 1px solid black;
+            }
+
+            #example-9 p {
+                color: red;
+                margin: 1cm;
+                border: 1px solid black;
+            }
+        </style>
+    </section>
+
+    <section id="example-10">
+        <h2>CSS padding（填充）</h2>
+        <p>定义元素边框与元素内容之间的空间，即上下左右的内边距</p>
+        <style>
+            #example-10 p {
+                color: red;
+                padding: 1cm;
+                border: 1px solid black;
+            }
+        </style>
+    </section>
+
+    <section id="example-11">
+        <h2>CSS Position (定位)</h2>
+        <p>详见：https://www.runoob.com/css/css-positioning.html</p>
+        <div class="container">
+            <div class="style-static">static 定位: 默认值，即没有定位</div>
+            <div class="style-fixed">fixed 定位: <br />元素的位置相对于浏览器窗口是固定位置</div>
+            <div class="style-relative">relative 定位: 相对定位元素的定位是相对其正常位置</div>
+            <div class="style-absolute">absolute 定位</div>
+            <div class="style-sticky">sticky 定位: 略，如 合个标题</div>
+            <div class="style-z">重叠的元素</div>
+        </div>
+        <p>hello world!</p>
+        <style>
+            #example-11 .container {
+                width: 100%;
+                height: 200px;
+                background-color: gainsboro;
+            }
+
+            #example-11 .container div {
+                display: inline;
+                width: 80px;
+                color: white;
+                background-color: red;
+            }
+
+            #example-11 .style-static {
+                position: static;
+            }
+
+            #example-11 .style-fixed {
+                position: fixed;
+                top: 30px;
+                right: 5px;
+            }
+
+            #example-11 .style-relative {
+                position: relative;
+                top: 50px;
+                left: 50px;
+            }
+
+            #example-11 .style-absolute {
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+
+            #example-11 .style-z {
+                position: absolute;
+                padding: 20px;
+                left: 0px;
+                top: 0px;
+                z-index: 1;
+                background-color: orange;
+            }
+        </style>
+    </section>
+
+    <section id="example-12">
+        <h2>CSS 布局 - Overflow</h2>
+        <p>hello world!<br />hello world!<br />hello world!<br />hello world!<br />hello world!<br />hello world!</p>
+        <style>
+            #example-12 p {
+                color: red;
+                width: 100%;
+                height: 80px;
+                background-color: gainsboro;
+                overflow: scroll;
+            }
+        </style>
+    </section>
+
+    <section id="example-13">
+        <h2>导航栏</h2>
+        <div class="page">
+            <div class="navbar">
+                <div class="title">微信</div>
+            </div>
+            <div class="content">
+                hello world!
+            </div>
+            <div class="tabbar">
+                <a class="item selected" href="#微信">微信</a>
+                <a class="item" href="#通讯录">通讯录</a>
+                <a class="item" href="#发现">发现</a>
+                <a class="item" href="#我">我</a>
+            </div>
+        </div>
+        <style>
+            #example-13 .page {
+                width: 320px;
+                height: 640px;
+                border: 1px solid black;
+                display: flex;
+                flex-flow: column nowrap;
+            }
+
+            #example-13 .navbar {
+                height: 44px;
+                padding-top: 20px;
+                background-color: #EDEDED;
+            }
+
+            #example-13 .navbar .title {
+                /* border: 1px solid; */
+                text-align: center;
+                line-height: 44px;
+                color: #151515;
+            }
+
+            #example-13 .page .content {
+                background-color: white;
+                flex: 1 1 auto;
+            }
+
+            #example-13 .page .tabbar {
+                width: 100%;
+                height: 44px;
+                background-color: #EDEDED;
+                flex: 0 0 auto;
+                display: flex;
+            }
+
+            #example-13 .page .tabbar a.item:link,
+            #example-13 .page .tabbar a.item:visited,
+            #example-13 .page .tabbar a.item:hover,
+            #example-13 .page .tabbar a.item:active {
+                /* border: 1px solid black; */
+                height: auto;
+                display: inline;
+                flex: 1;
+                text-align: center;
+                vertical-align: bottom;
+                text-decoration: none;
+                color: #151515;
+                line-height: 44px;
+                font-size: 11px;
+            }
+
+            #example-13 .page .tabbar a.item.selected {
+                color: #56BD69;
+            }
+        </style>
+    </section>
+
+    <section id="example-14">
+        <h2>网站横向导航栏</h2>
+        <div class="page">
+            <ul class="navbar">
+                <li><a href=""></a></li>
+                <li><a href="商店">商店</a></li>
+                <li><a href="Mac">Mac</a></li>
+                <li><a href="iPad">iPad</a></li>
+                <li><a href="iPhone">iPhone</a></li>
+                <li><a href="Watch">Watch</a></li>
+                <li><a href="AirPods">AirPods</a></li>
+            </ul>
+            <main class="content">Hello Apple !</main>
+        </div>
+        <style>
+            #example-14 .page {
+                border: 1px solid black;
+                width: 100%;
+                height: 200px;
+                display: flex;
+                flex-flow: column nowrap;
+            }
+
+            #example-14 .page ul.navbar {
+                background-color: #030304;
+                height: 44px;
+                margin: 0;
+                padding: 0;
+            }
+
+            #example-14 .page ul.navbar li {
+                list-style-type: none;
+                display: inline-block;
+                margin: 0 12px;
+                padding: 0;
+                text-align: center;
+                line-height: 44px;
+                font-size: 12px;
+            }
+
+            #example-14 .page ul.navbar li:first-child {
+                font-size: 15px;
+            }
+
+            #example-14 .page ul.navbar li a:link,
+            #example-14 .page ul.navbar li a:visited,
+            #example-14 .page ul.navbar li a:hover,
+            #example-14 .page ul.navbar li a:active {
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            #example-14 .page ul.navbar li a:hover,
+            #example-14 .page ul.navbar li a:active {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            #example-14 .page main.content {
+                background-color: rgba(0, 0, 0, 0.05);
+                text-align: center;
+                vertical-align: middle;
+                flex: 1;
+            }
+        </style>
+    </section>
+
+    <section id="example-15">
+        <h2>全屏高度的固定导航条</h2>
+        <div class="page">
+            <ul class="navbar">
+                <li><a href="#鲜美双11">鲜美双11</a></li>
+                <li><a href="#火锅到家">火锅到家</a></li>
+                <li><a href="#品牌美食">品牌美食</a></li>
+                <li class="selected"><a href="#午餐推荐">午餐推荐</a></li>
+                <li><a href="#海鲜大餐">海鲜大餐</a></li>
+                <li><a href="#卤味熟食">卤味熟食</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+                <li><a href="#热菜锅煲">热菜锅煲</a></li>
+            </ul>
+            <main class="content">Hello Waimai !</main>
+        </div>
+        <style>
+            #example-15 .page {
+                border: 1px solid black;
+                width: 320px;
+                height: 640px;
+                display: flex;
+                flex-flow: row nowrap;
+            }
+
+            #example-15 .page ul.navbar {
+                background-color: white;
+                width: 80px;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                left: 0;
+                overflow: auto;
+            }
+
+            /* 隐藏滚动条 */
+            #example-15 .page ul.navbar::-webkit-scrollbar {
+                display: none;
+            }
+
+            #example-15 .page ul.navbar li {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                line-height: 44px;
+                font-size: 12px;
+                border-right: solid 1px #E5E5E5;
+            }
+
+            #example-15 .page ul.navbar li.selected {
+                border-right: 0;
+                border-top: solid 1px #E5E5E5;
+                border-bottom: solid 1px #E5E5E5;
+                color: #40ABF7;
+                font-weight: bold;
+            }
+
+            #example-15 .page ul.navbar li a:link,
+            #example-15 .page ul.navbar li a:visited,
+            #example-15 .page ul.navbar li a:hover,
+            #example-15 .page ul.navbar li a:active {
+                text-decoration: none;
+                color: black;
+            }
+
+            #example-15 .page ul.navbar li.selected a,
+            #example-15 .page ul.navbar li a:hover {
+                color: #40ABF7;
+            }
+
+            #example-15 .page main.content {
+                background-color: white;
+                text-align: center;
+                vertical-align: middle;
+                flex: 1;
+            }
+        </style>
+    </section>
+
+    <section id="example-16">
+        <h2>CSS 下拉菜单</h2>
+        <div class="dropdown">
+            <span>鼠标移上来(等宽)</span>
+            <div class="dropdown-content aequilate">
+                <a href="">👍 Good ~</a>
+                <a href="">👍 Good ~</a>
+                <a href="">👍 Good ~</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <span>鼠标移上来(左对齐)</span>
+            <div class="dropdown-content align-left">
+                <a href="">👍 Good ~</a>
+                <a href="">👍 Good ~</a>
+                <a href="">👍 Good ~</a>
+            </div>
+        </div>
+        <div class="dropdown float-right">
+            <span>鼠标移上来(右对齐)</span>
+            <div class="dropdown-content align-right">
+                <a href="">👍 Good ~</a>
+                <a href="">👍 Good ~</a>
+                <a href="">👍 Good ~</a>
+            </div>
+        </div>
+        <style>
+            #example-16 .dropdown {
+                width: 150px;
+                height: 44px;
+                line-height: 44px;
+                text-align: center;
+                background-color: gainsboro;
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                margin-bottom: 10px;
+                font-size: 12px;
+            }
+
+            #example-16 .dropdown:hover {
+                color: red;
+            }
+
+            #example-16 .dropdown.float-right {
+                float: right;
+                right: 0;
+            }
+
+            #example-16 .dropdown-content {
+                display: none;
+                position: absolute;
+                overflow: auto;
+                background: white;
+                height: 80px;
+                border: 1px solid gainsboro;
+                border-radius: 5px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+            }
+
+            #example-16 .dropdown-content.aequilate {
+                width: 100%;
+            }
+
+            #example-16 .dropdown-content.align-left {
+                width: 50%;
+            }
+
+            #example-16 .dropdown-content.align-right {
+                width: 50%;
+                right: 0;
+            }
+
+            #example-16 .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            #example-16 .dropdown-content a {
+                color: black;
+                text-decoration: none;
+                display: block;
+            }
+
+            #example-16 .dropdown-content a:hover {
+                color: #317AC6;
+                font-weight: bold;
+            }
+        </style>
+    </section>
+
+    <section id="example-17">
+        <h2>CSS 提示工具(Tooltip)</h2>
+        <div class="tooltip">👈<span class="left">小贴士~</span></div>
+        <div class="tooltip">👉<span class="right">小贴士~</span></div>
+        <div class="tooltip">👆<span class="top">小贴士~</span></div>
+        <div class="tooltip">👇<span class="bottom">小贴士~</span></div>
+        <style>
+            #example-17 .tooltip {
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black;
+                margin-left: 100px;
+            }
+
+            #example-17 .tooltip span {
+                background-color: rgba(0, 0, 0, 0.8);
+                border-radius: 5px;
+                color: white;
+                text-align: center;
+                visibility: hidden;
+                width: 120px;
+                padding: 5px 0;
+
+                /* 定位 */
+                position: absolute;
+                z-index: 1;
+
+                /* 淡入效果 */
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            #example-17 .tooltip span.left {
+                top: -5px;
+                right: 105%;
+            }
+
+            #example-17 .tooltip span.left::after {
+                content: " ";
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                margin-top: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
+            }
+
+            #example-17 .tooltip span.right {
+                top: -5px;
+                left: 105%;
+            }
+
+            #example-17 .tooltip span.right::after {
+                content: " ";
+                position: absolute;
+                right: 100%;
+                top: 50%;
+                margin-top: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent;
+            }
+
+            #example-17 .tooltip span.top {
+                bottom: 100%;
+                left: 50%;
+
+                /* 使用一半宽度 (120/2 = 60) 来居中提示工具 */
+                margin-left: -60px;
+            }
+
+            #example-17 .tooltip span.top::after {
+                content: " ";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+            }
+
+            #example-17 .tooltip span.bottom {
+                top: 100%;
+                left: 50%;
+
+                /* 使用一半宽度 (120/2 = 60) 来居中提示工具 */
+                margin-left: -60px;
+            }
+
+            #example-17 .tooltip span.bottom::after {
+                content: " ";
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+            }
+
+            #example-17 .tooltip:hover span {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            /* 添加箭头 */
+        </style>
+    </section>
+
+    <section id="example-18">
+        <h2>CSS 图像透明/不透明</h2>
+        <img src="https://via.placeholder.com/100x80/449FE3/FFFFFF?text=andym129">
+        <img src="https://via.placeholder.com/100x80/449FE3/FFFFFF?text=andym129">
+        <img src="https://via.placeholder.com/100x80/449FE3/FFFFFF?text=andym129">
+        <p>PS: 在鼠标移动到图片上时会改变图片的透明度</p>
+        <style>
+            #example-18 img {
+                opacity: 0.4;
+                /* 适用 IE8 及其更早版本 */
+                filter: alpha(opacity=40);
+            }
+
+            #example-18 img:hover {
+                opacity: 1;
+                /* 适用 IE8 及其更早版本 */
+                filter: alpha(opacity=100);
+            }
+        </style>
+    </section>
+
+    <section id="example-19">
+        <h2>CSS 属性 选择器</h2>
+        <p>详见：https://www.runoob.com/css/css-attribute-selectors.html</p>
+        <p>hello world!</p>
+        <p debug>hello world!</p>
+        <p lang>hello world!</p>
+        <p lang="text">hello world!<br />hello world!<br />hello world!<br />hello world!</p>
+        <p lang="html">hello world!<br />hello world!<br />hello world!<br />hello world!</p>
+        <p lang="vue">hello world!<br />hello world!<br />hello world!<br />hello world!</p>
+        <p lang="vue 2">hello world!<br />hello world!<br />hello world!<br />hello world!</p>
+        <p lang="vue 3">hello world!<br />hello world!<br />hello world!<br />hello world!</p>
+        <p lang="css">hello world!<br />hello world!<br />hello world!<br />hello world!</p>
+        <p lang="css-2">hello world!<br />hello world!<br />hello world!<br />hello world!</p>
+        <p lang="css-3">hello world!<br />hello world!<br />hello world!<br />hello world!</p>
+
+        <style>
+            #example-19 [debug] {
+                outline: 1px dashed red;
+                background-color: rgba(255, 0, 0, 0.2);
+            }
+
+            #example-19 [debug]::after {
+                content: "⬅︎ debug";
+                font-weight: bold;
+                padding: 0 5px;
+                color: red;
+                float: right;
+                background-color: rgba(255, 0, 0, 0.2);
+            }
+
+            #example-19 [lang] {
+                background-color: #242424;
+                color: #9BDCFB;
+                border-radius: 10px;
+                padding: 10px;
+                height: 50px;
+                overflow: auto;
+            }
+
+            #example-19 [lang]::before {
+                content: "UNKNOW";
+                padding: 5px;
+                color: #6F6F6F;
+                float: right;
+                font-size: 10px;
+            }
+
+            #example-19 [lang=text]::before {
+                content: "TEXT";
+            }
+
+            #example-19 [lang=html]::before {
+                content: "HTML";
+            }
+
+            /* [attribute~=value] 属性中包含独立的单词为 value: */
+            #example-19 [lang~=vue]::before {
+                content: "VUE";
+            }
+
+            /* [attribute|=value] 属性中必须是完整且唯一的单词，或者以 - 分隔开: */
+            #example-19 [lang|=css]::before {
+                content: "CSS";
+            }
+
+            /* 其他的还有：~=, |=, ^=, $=, *= */
+        </style>
+    </section>
+
+    <section id="example-20">
+        <h2>CSS 表单</h2>
+        <form>
+            <input type="text" placeholder="请输入搜索词">
+        </form>
+        <style>
+            #example-20 form input[type="text"] {
+                font-size: 16px;
+                width: 40%;
+                line-height: 40px;
+                border: 2px solid rgba(128, 128, 128, 0.6);
+                border-radius: 8px;
+                padding: 0 10px;
+                box-sizing: border-box;
+                background-image: url('https://tuchuangs.com/imgs/2022/11/12/603e2db415ce97b5.png');
+                background-repeat: no-repeat;
+                background-position: 10px 10px;
+                padding-left: 40px;
+
+                /* 加上动画 */
+                -webkit-transition: width 0.25s ease-in-out;
+                transition: width 0.25s ease-in-out;
+            }
+
+            #example-20 form input[type="text"]:hover {
+                border-color: rgba(128, 128, 128, 1);
+            }
+
+            #example-20 form input[type="text"]:focus {
+                border-color: #5371EA;
+                color: #fff;
+                width: 60%;
+            }
+        </style>
+    </section>
+
+    <section id="example-21">
+        <h2>CSS 计数器</h2>
+        <p>如「每个 `body section h2`」所示</p>
+        <p>详见：https://www.runoob.com/css/css-counters.html</p>
+        <style>
+            body {
+                counter-reset: section;
+            }
+
+            body section h2::before {
+                counter-increment: section;
+                content: "Section " counter(section) ": ";
+            }
+
+            #example-21 p {
+                color: red;
+            }
+        </style>
+    </section>
+
+    <section id="example-22">
+        <h2>CSS 网页布局</h2>
+        <div class="page">
+            <div class="header">Header</div>
+            <div class="navbar">
+                <a href="#">Menu Item</a>
+                <a href="#">Menu Item</a>
+                <a href="#">Menu Item</a>
+            </div>
+            <div class="row">
+                <div class="column side">Side</div>
+                <div class="column middle">Middle</div>
+                <div class="column side">Side</div>
+            </div>
+            <div class="footer">Footer</div>
+        </div>
+        <style>
+            #example-22 .page {
+                border: 1px solid gray;
+                /* width: 100%; */
+                /* height: 400px; */
+            }
+
+            #example-22 .page div {
+                box-sizing: border-box;
+                border: 2.5px solid white;
+                background-color: gainsboro;
+                text-align: center;
+            }
+
+            #example-22 .page .header {
+                height: 64px;
+            }
+
+            #example-22 .page .navbar {
+                /* height: 44px; */
+                text-align: center;
+                overflow: hidden;
+            }
+
+            #example-22 .page .navbar a {
+                float: left;
+                display: block;
+                color: black;
+                height: 100%;
+                padding: 10px 20px;
+                text-decoration: none;
+                background-color: gainsboro;
+            }
+
+            #example-22 .page .navbar a:hover {
+                background-color: gray;
+                color: white;
+            }
+
+            #example-22 .page .column {
+                float: left;
+                height: 300px;
+            }
+
+            #example-22 .page .column.side {
+                width: 25%;
+            }
+
+            #example-22 .page .column.middle {
+                width: 50%;
+            }
+
+            /* 列后清除浮动 */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        </style>
+    </section>
+
+</body>
+
+</html>

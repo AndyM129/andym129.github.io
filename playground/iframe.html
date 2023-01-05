@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - iframe 框架</title>
+    <style>
+        body {
+            font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+        }
+
+        ˝ blockquote {
+            margin-left: 0;
+            padding: 8px 0 8px 8px;
+            border-left: 4px solid #ccc;
+            font-size: small;
+        }
+
+        blockquote::before {
+            content: '说明：';
+            font-weight: bold;
+        }
+
+        body>section {
+            padding: 10px 0 0 0;
+            margin-bottom: 100px;
+            border-top: 2px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        iframe: 框架 - <a href="https://www.runoob.com" target="iframe_a" rel="noopener">点击加载/刷新</a>
+        <iframe src="https://www.runoob.com" width="100%" height="200" frameborder="1" loading="lazy" name="iframe_a"></iframe>
+    </section>
+
+</body>
+
+</html>
