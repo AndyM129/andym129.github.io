@@ -33,18 +33,6 @@ function save_1() {
 }
 
 function save_2() {
-    html2canvas(document.querySelector('#avatar'), {
-        onrendered: function (canvas) {
-            document.body.appendChild(canvas);
-
-            // var image = new Image();
-            // image.src = canvas.toDataURL("image/png");
-            // document.body.appendChild(image);
-        }
-    })
-}
-
-function save_3() {
     let container = document.getElementById('avatar')
     console.log(container)
     html2canvas(container).then(canvas => {
