@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <title>一个没有表格的网页</title>
+    <style>
+        body {
+            font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+
+        #nav-bar {
+            display: block;
+            background-color: #252526;
+            color: #C9C9C9;
+        }
+
+        #nav-bar>li {
+            display: inline-block;
+            padding: 15px 15px;
+            margin: 0;
+            cursor: pointer;
+            /* float: left; */
+        }
+
+        #nav-bar>li:hover,
+        #nav-bar>li.active {
+            background-color: #1E1E1E;
+            color: #88C696;
+        }
+
+        #side-menu {
+            width: 200px;
+            display: block;
+            background-color: #252526;
+            color: #CCCCCC;
+            float: left;
+        }
+
+        #side-menu>li {
+            list-style: none;
+            padding: 15px 10px;
+            cursor: pointer;
+        }
+
+        #side-menu>li:hover,
+        #side-menu>li.active {
+            background-color: #37373C;
+            color: #88C696;
+        }
+
+        #header {
+            background-color: #1E1E1E;
+            line-height: 30px;
+            color: #A9A9A9;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        #footer {
+            background-color: #317AC6;
+            line-height: 30px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <lu id="nav-bar">
+        <li class="active">主页</li>
+        <li>新闻</li>
+        <li>联系</li>
+        <li>关于</li>
+    </lu>
+
+    <lu id="side-menu">
+        <li class="active">Menu 1</li>
+        <li>Menu 2</li>
+        <li>Menu 3</li>
+        <li>Menu 4</li>
+        <li>Menu 5</li>
+    </lu>
+
+    <div id="main">
+        <div id="header">主页 > Menu 1</div>
+        <div id="content">Content</div>
+    </div>
+
+    <div class="clear"></div>
+    <div id="footer">Footer</div>
+
+</body>
+
+</html>

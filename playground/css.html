@@ -144,6 +144,7 @@
         <h2>CSS 链接</h2>
         <a class="a1" href="#xxx">一个链接</a><br />
         <a class="a2" href="#xxx">一个链接</a><br />
+        <a class="a3" href="http://andym129.github.io/playground/css.html">把括号内的URL用content属性插入到每个链接后面</a><br />
         <style>
             /* 未访问链接*/
             #example-4 a:link {
@@ -175,6 +176,10 @@
                 text-align: center;
                 padding: 0 4px;
                 text-decoration: none;
+            }
+
+            #example-4 a.a3:after {
+                content: " (" attr(href) ")";
             }
         </style>
     </section>
